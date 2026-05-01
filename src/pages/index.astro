@@ -127,19 +127,17 @@ const navLinks = [
       <div class="location-photo-badge">Haad Salad Bay - West Coast Koh Phangan</div>
     </div>
 
-    <div class="callout-card">
-      <div class="callout-card-text">
-        <p class="callout-eyebrow">West-Facing Golden Hour - Every Evening, Every Villa</p>
-        <p class="body-copy">The site faces west toward the Gulf of Thailand, delivering year-round uninterrupted sunset views across 6-8 villa placements. A permanent, structurally unblockable asset - and the single most powerful driver of premium nightly rates on Koh Phangan's west coast.</p>
+    <div class="sunset-fullbleed">
+      <img src="/assets/sunset-gulf-wide.png" loading="lazy" alt="Full sunset view from the plot over the Gulf of Thailand - direct west-facing exposure" class="sunset-fullbleed-img" />
+      <div class="sunset-fullbleed-overlay">
+        <p class="callout-eyebrow-light">West-Facing Golden Hour - Every Evening, Every Villa</p>
+        <p class="sunset-fullbleed-body">The site faces west toward the Gulf of Thailand, delivering year-round uninterrupted sunset views across 6-8 villa placements. A permanent, structurally unblockable asset - and the single most powerful driver of premium nightly rates on Koh Phangan's west coast.</p>
         <div class="tag-row">
-          <span class="tag">West-Facing Exposure</span>
-          <span class="tag">Year-Round Sunsets</span>
-          <span class="tag">Unblockable Sightlines</span>
-          <span class="tag">Premium ADR Driver</span>
+          <span class="tag-dark">West-Facing Exposure</span>
+          <span class="tag-dark">Year-Round Sunsets</span>
+          <span class="tag-dark">Unblockable Sightlines</span>
+          <span class="tag-dark">Premium ADR Driver</span>
         </div>
-      </div>
-      <div class="callout-card-photo">
-        <img src="/assets/sunset-palms-villas.png" loading="lazy" alt="Golden hour sunset framed by tropical palms overlooking the bay" />
       </div>
     </div>
   </section>
@@ -775,6 +773,43 @@ const navLinks = [
     transition: transform 0.7s ease;
   }
   .callout-card-photo:hover img { transform: scale(1.04); }
+
+  /* ══════════════════════════════════════════════════════════
+     SUNSET FULL-BLEED
+  ══════════════════════════════════════════════════════════ */
+  .sunset-fullbleed {
+    position: relative;
+    width: 100%;
+    height: clamp(380px, 55vw, 680px);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 56px;
+  }
+  .sunset-fullbleed-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+    transition: transform 1s ease;
+  }
+  .sunset-fullbleed:hover .sunset-fullbleed-img { transform: scale(1.02); }
+  .sunset-fullbleed-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10,6,3,0.92) 0%, rgba(10,6,3,0.5) 40%, transparent 75%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 48px 48px 44px;
+  }
+  .sunset-fullbleed-body {
+    font-size: 16px;
+    color: rgba(245,241,237,0.72);
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: 20px;
+  }
 
   /* ══════════════════════════════════════════════════════════
      OPPORTUNITY
