@@ -286,19 +286,8 @@ const navLinks = [
       </div>
     </div>
 
-    <div class="topo-callout">
-      <img src="/assets/plot-hillside-seaview.png" loading="lazy" alt="On-plot view through tropical trees with Haad Salad bay and sea visible below" class="topo-callout-img" />
-      <div class="topo-callout-overlay">
-        <p class="callout-eyebrow">Consistent 15° Hillside - Full 2 Rai</p>
-        <p class="topo-callout-body">The uniform gradient eliminates the retaining wall engineering that typically consumes 15-25% of hillside development budgets on irregular terrain. Seven villa positions. Natural steps. No site fighting the architecture.</p>
-        <div class="tag-row">
-          <span class="tag-dark">Consistent 15° Slope</span>
-          <span class="tag-dark">Below 80m Altitude</span>
-          <span class="tag-dark">Green Zone Compliant</span>
-          <span class="tag-dark">Minimal Earthwork</span>
-          <span class="tag-dark">Natural Drainage</span>
-        </div>
-      </div>
+    <div class="topo-flat-img">
+      <img src="/assets/slope-topography.png" loading="lazy" alt="Slope and terrain on the plot - consistent 15 degree gradient visible through tropical trees" />
     </div>
   </section>
 
@@ -1139,6 +1128,19 @@ const navLinks = [
     font-size: 15px;
     color: var(--color-muted);
     line-height: 1.7;
+  }
+  .topo-flat-img {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .topo-flat-img img {
+    width: 100%;
+    height: clamp(300px, 42vw, 560px);
+    object-fit: cover;
+    object-position: center 40%;
+    display: block;
+    border-radius: 10px;
   }
   .topo-callout {
     position: relative;
