@@ -92,40 +92,39 @@ const navLinks = [
        LOCATION
   ═══════════════════════════════════════════════════════ -->
   <section class="section" id="location">
-    <div class="location-grid">
-      <div class="location-text">
-        <p class="section-label">Location</p>
-        <h2 class="section-title">Haad Salad, West Coast<br>Koh Phangan</h2>
-        <p class="body-copy">Positioned on the upper hillside above Haad Salad bay - one of Koh Phangan's most coveted west-coast addresses. Close enough to the beach to walk, high enough to command the view.</p>
-        <div class="travel-grid">
-          <div class="travel-item">
-            <span class="travel-val">2 min</span>
-            <span class="travel-label">Drive to Haad Salad Beach</span>
-          </div>
-          <div class="travel-item">
-            <span class="travel-val">6 min</span>
-            <span class="travel-label">Drive to Srithanu</span>
-          </div>
-          <div class="travel-item">
-            <span class="travel-val">17 min</span>
-            <span class="travel-label">Drive to Thong Sala Ferry Pier</span>
-          </div>
-          <div class="travel-item">
-            <span class="travel-val">10 min</span>
-            <span class="travel-label">Drive to Zen Beach</span>
-          </div>
+    <div class="location-text">
+      <p class="section-label">Location</p>
+      <h2 class="section-title">Haad Salad, West Coast<br>Koh Phangan</h2>
+      <p class="body-copy">Positioned on the upper hillside above Haad Salad bay - one of Koh Phangan's most coveted west-coast addresses. Close enough to the beach to walk, high enough to command the view.</p>
+      <div class="travel-grid">
+        <div class="travel-item">
+          <span class="travel-val">2 min</span>
+          <span class="travel-label">Drive to Haad Salad Beach</span>
         </div>
-        <ul class="check-list">
-          <li>Connected to public concrete road and electricity infrastructure</li>
-          <li>Build up to 12m height across the full site (starting from 10m down from the road)</li>
-          <li>Quiet, green hillside enclave - established villas nearby, not overcrowded</li>
-          <li>West-facing - direct sunset exposure year-round from all villa positions</li>
-          <li>Coordinates: 9.781429, 99.973356</li>
-        </ul>
+        <div class="travel-item">
+          <span class="travel-val">6 min</span>
+          <span class="travel-label">Drive to Srithanu</span>
+        </div>
+        <div class="travel-item">
+          <span class="travel-val">17 min</span>
+          <span class="travel-label">Drive to Thong Sala Ferry Pier</span>
+        </div>
+        <div class="travel-item">
+          <span class="travel-val">10 min</span>
+          <span class="travel-label">Drive to Zen Beach</span>
+        </div>
       </div>
-      <div class="location-photo">
-        <img src="/assets/bay-breakwater.png" loading="lazy" alt="Haad Salad bay with breakwater and Gulf of Thailand" />
-      </div>
+      <ul class="check-list">
+        <li>Connected to public concrete road and electricity infrastructure</li>
+        <li>Build up to 12m height across the full site (starting from 10m down from the road)</li>
+        <li>Quiet, green hillside enclave - established villas nearby, not overcrowded</li>
+        <li>West-facing - direct sunset exposure year-round from all villa positions</li>
+        <li>Coordinates: 9.781429, 99.973356</li>
+      </ul>
+    </div>
+    <div class="location-photo-full">
+      <img src="/assets/bay-breakwater.png" loading="lazy" alt="Haad Salad bay with breakwater and Gulf of Thailand" />
+      <div class="location-photo-badge">Haad Salad Bay - West Coast Koh Phangan</div>
     </div>
 
     <div class="callout-card">
@@ -856,28 +855,43 @@ const navLinks = [
   /* ══════════════════════════════════════════════════════════
      LOCATION
   ══════════════════════════════════════════════════════════ */
-  .location-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
-    align-items: start;
+  .location-text {
+    max-width: 720px;
+    margin-bottom: 48px;
+  }
+  .location-photo-full {
+    position: relative;
+    width: 100%;
+    height: clamp(360px, 52vw, 640px);
+    border-radius: 10px;
+    overflow: hidden;
     margin-bottom: 56px;
   }
-  .location-photo {
-    position: relative;
-    height: clamp(320px, 42vw, 540px);
-    border-radius: 8px;
-    overflow: hidden;
-    margin-top: 52px;
-  }
-  .location-photo img {
+  .location-photo-full img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 60%;
     display: block;
-    transition: transform 0.7s ease;
+    transition: transform 0.8s ease;
   }
-  .location-photo:hover img { transform: scale(1.03); }
+  .location-photo-full:hover img { transform: scale(1.02); }
+  .location-photo-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(10,8,5,0.72);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 5px;
+    padding: 8px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(247,244,239,0.88);
+  }
   .travel-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
