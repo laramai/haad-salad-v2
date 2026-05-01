@@ -359,44 +359,20 @@ const navLinks = [
     <h2 class="section-title">Two Plots. One Rare Opportunity.<br>Flexible Purchase Options.</h2>
     <p class="body-copy pricing-lead">The land is already subdivided into two chanote plots, giving developers the option to acquire together at best value, or separately if a partner or phased approach is preferred.</p>
 
-    <div class="pricing-grid">
+    <div class="pricing-grid pricing-grid--single">
       <div class="pricing-card pricing-card--featured">
         <div class="pricing-card-badge">Best Value</div>
-        <p class="pricing-option-label">Option 1 - Buy Together</p>
+        <p class="pricing-option-label">Buy Together - Full 2 Rai</p>
         <p class="pricing-price">฿28,000,000</p>
         <p class="pricing-sub">฿14,000,000 per rai · Total 2 rai</p>
         <table class="pricing-table">
           <tr><td>Total Area</td><td>2 Rai</td></tr>
           <tr><td>Price per Rai</td><td>฿14,000,000</td></tr>
           <tr><td>Plots Included</td><td>Plot A + Plot B</td></tr>
-          <tr><td>Saving vs Separate</td><td class="price-highlight">฿3,500,000</td></tr>
           <tr><td>Title</td><td>2 × Chanote</td></tr>
+          <tr><td>Road Easement</td><td>Prepared</td></tr>
         </table>
         <a class="btn-primary btn-full" href="/request-documents">Request Documents</a>
-      </div>
-
-      <div class="pricing-card">
-        <p class="pricing-option-label">Option 2 - Buy Separately</p>
-        <div class="plot-row">
-          <div class="plot-item">
-            <p class="plot-name">Plot A</p>
-            <p class="plot-price">฿8,250,000</p>
-            <p class="plot-meta">0.5 rai · ฿16,500,000/rai</p>
-          </div>
-          <div class="plot-divider"></div>
-          <div class="plot-item">
-            <p class="plot-name">Plot B</p>
-            <p class="plot-price">฿23,250,000</p>
-            <p class="plot-meta">1.5 rai · ฿15,500,000/rai</p>
-          </div>
-        </div>
-        <table class="pricing-table">
-          <tr><td>Combined if Separate</td><td>฿31,500,000</td></tr>
-          <tr><td>Title</td><td>Chanote per plot</td></tr>
-          <tr><td>Road Easement</td><td>Prepared - min 2.5m</td></tr>
-        </table>
-        <p class="pricing-note">A road easement connecting both plots and the lower plot has already been prepared. Final road width negotiable - minimum 2.5m. Road cost shared between owners as agreed.</p>
-        <a class="btn-ghost btn-full" href="/request-documents">Enquire Separately</a>
       </div>
     </div>
 
@@ -1179,6 +1155,7 @@ const navLinks = [
     max-width: 580px;
     margin-bottom: 48px;
   }
+  .pricing-grid--single { grid-template-columns: 1fr; max-width: 560px; }
   .pricing-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1410,7 +1387,8 @@ const navLinks = [
     .hero-stat:nth-child(2) { border-right: none; }
     .terrain-strip { grid-template-columns: 1fr; }
     .why-grid { grid-template-columns: 1fr; gap: 32px; }
-    .pricing-grid { grid-template-columns: 1fr; }
+    .pricing-grid--single { grid-template-columns: 1fr; max-width: 560px; }
+  .pricing-grid { grid-template-columns: 1fr; }
     .callout-card { grid-template-columns: 1fr; }
     .callout-card-photo { min-height: 260px; }
     .topo-grid { grid-template-columns: 1fr; }
