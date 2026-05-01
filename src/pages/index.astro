@@ -1,17 +1,615 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <Nav ctaHref="/request-documents" ctaLabel="Request Documents" />
+
+  <!-- HERO -->
+  <header class="hero">
+    <p class="hero-tag">Koh Phangan · Gulf of Thailand</p>
+    <h1>2 Rai of Sea-View Land at Haad Salad</h1>
+    <p class="hero-lead">Title-deed freehold (Chanote) on a gentle hillside above one of Koh Phangan's most sought-after bays. Zoned and feasibility-ready for 7 luxury villas.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="/request-documents">Request Chanote &amp; Survey</a>
+      <a class="btn-ghost" href="#gallery">View the Land</a>
+    </div>
+    <div class="trust-strip">
+      <span class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Chanote Title (Nor Sor 4 Jor)
+      </span>
+      <span class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Easement Agreement in Place
+      </span>
+      <span class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        7-Villa Feasibility Study
+      </span>
+      <span class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Koh Phangan Land Office
+      </span>
+    </div>
+  </header>
+
+  <!-- METRICS STRIP -->
+  <section class="metrics">
+    <div class="metrics-inner">
+      <div class="metric">
+        <div class="metric-value">2 Rai</div>
+        <div class="metric-label">Total Plot Size</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">3,200 m²</div>
+        <div class="metric-label">Usable Area</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">7 Units</div>
+        <div class="metric-label">Villa Feasibility</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">Chanote</div>
+        <div class="metric-label">Title Type</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO GALLERY -->
+  <section class="gallery-section" id="gallery">
+    <div class="gallery-header">
+      <p class="section-label">The Land</p>
+      <h2 class="section-title">See the plot firsthand</h2>
+      <p class="section-lead">Panoramic sea views, established road access, and lush tropical surroundings on a quiet hillside above Haad Salad bay. Scroll each row to explore.</p>
+    </div>
+
+    <div class="gallery-group">
+      <div class="gallery-group-label">Sunsets from the plot</div>
+      <div class="gallery-strip">
+        <div class="gallery-strip-item"><img src="/assets/sunset-bay-drone.png" loading="lazy" alt="Dramatic orange sunset over Haad Salad bay from drone" /><span class="strip-badge">Sunset · Drone</span></div>
+        <div class="gallery-strip-item"><img src="/assets/sunset-panorama-drone.png" loading="lazy" alt="Wide Gulf of Thailand sunset panorama from drone" /><span class="strip-badge">Gulf Panorama · Drone</span></div>
+        <div class="gallery-strip-item"><img src="/assets/sunset-headland-drone.png" loading="lazy" alt="Aerial sunset view of the Haad Salad headland" /><span class="strip-badge">Headland at Sunset · Drone</span></div>
+        <div class="gallery-strip-item"><img src="/assets/sunset-palm-fronds.png" loading="lazy" alt="Sun setting through palm fronds with villas below" /><span class="strip-badge">Through the Palms</span></div>
+        <div class="gallery-strip-item"><img src="/assets/sunset-palms-villas.png" loading="lazy" alt="Golden hour sunset framed by tropical palms" /><span class="strip-badge">Golden Hour</span></div>
+        <div class="gallery-strip-item"><img src="/assets/sunset-view.png" loading="lazy" alt="Golden-hour sunset view from the hilltop" /><span class="strip-badge">Sunset Over the Bay</span></div>
+      </div>
+    </div>
+
+    <div class="gallery-group">
+      <div class="gallery-group-label">Sea &amp; bay views</div>
+      <div class="gallery-strip">
+        <div class="gallery-strip-item"><img src="/assets/sea-view.png" loading="lazy" alt="Panoramic turquoise sea view from the plot" /><span class="strip-badge">Turquoise Sea View</span></div>
+        <div class="gallery-strip-item"><img src="/assets/view-headland.png" loading="lazy" alt="Rocky tropical headland and deep blue sea through foliage" /><span class="strip-badge">Rocky Headland</span></div>
+        <div class="gallery-strip-item"><img src="/assets/bay-breakwater.png" loading="lazy" alt="Haad Salad bay with breakwater at dusk" /><span class="strip-badge">Haad Salad Bay</span></div>
+        <div class="gallery-strip-item"><img src="/assets/bay-breakwater-2.png" loading="lazy" alt="Wide bay view showing breakwater and village below" /><span class="strip-badge">Bay &amp; Breakwater</span></div>
+        <div class="gallery-strip-item"><img src="/assets/view-sea-dusk.png" loading="lazy" alt="Open sea at dusk framed through tropical trees" /><span class="strip-badge">Sea at Dusk</span></div>
+        <div class="gallery-strip-item"><img src="/assets/bay-aerial-golden.png" loading="lazy" alt="Aerial view of Haad Salad bay at golden hour" /><span class="strip-badge">Bay at Golden Hour · Drone</span></div>
+        <div class="gallery-strip-item"><img src="/assets/bay-aerial-wide.png" loading="lazy" alt="Wide aerial view of Haad Salad headland and bay" /><span class="strip-badge">Full Bay · Drone</span></div>
+      </div>
+    </div>
+
+    <div class="gallery-group">
+      <div class="gallery-group-label">The plot &amp; access</div>
+      <div class="gallery-strip">
+        <div class="gallery-strip-item"><img src="/assets/plot-trees-view.png" loading="lazy" alt="On-plot view through tall tropical trees with sea in background" /><span class="strip-badge">On the Land</span></div>
+        <div class="gallery-strip-item"><img src="/assets/plot-trees-view-2.png" loading="lazy" alt="Tropical tree canopy on the plot with Gulf in the distance" /><span class="strip-badge">Plot Canopy</span></div>
+        <div class="gallery-strip-item"><img src="/assets/road-access.png" loading="lazy" alt="Concrete private road providing direct access to the plot" /><span class="strip-badge">Paved Road Access</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AERIAL GALLERY -->
+  <section class="aerial-section" id="aerial">
+    <div class="aerial-header">
+      <p class="section-label">Drone Survey · Plot Boundaries</p>
+      <h2 class="section-title">The plot in full context</h2>
+      <p class="section-lead">Aerial footage with surveyed boundaries marked. The bay, the road, and the neighbourhood of luxury villas — all visible from above.</p>
+    </div>
+    <div class="aerial-grid">
+      <div class="aerial-main">
+        <img src="/assets/aerial-overview.png" loading="lazy" alt="Aerial drone overview of the Haad Salad plot with white boundary markers, bay in background" />
+        <div class="aerial-badge">Bay View · Plot Overview</div>
+      </div>
+      <div class="aerial-thumb">
+        <img src="/assets/aerial-hillside.png" loading="lazy" alt="Aerial view of the plot on hillside with adjacent luxury villas" />
+        <div class="aerial-badge">Adjacent Villas</div>
+      </div>
+      <div class="aerial-thumb">
+        <img src="/assets/aerial-slope.png" loading="lazy" alt="Aerial view showing slope gradient and tropical canopy of the plot" />
+        <div class="aerial-badge">Slope &amp; Terrain</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section class="section">
+    <p class="section-label">Why This Plot</p>
+    <h2 class="section-title">Built for development, held under freehold</h2>
+    <p class="section-lead">Every material element a developer needs is already in place — title, access, views, and feasibility-mapped layouts.</p>
+
+    <div class="highlights">
+      <div class="highlight-item">
+        <div class="highlight-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h3 class="highlight-title">Full Chanote Title</h3>
+        <p class="highlight-body">Thai freehold deed (Nor Sor 4 Jor) with easement agreement in place. No Sor Kor 1 uncertainty. Clean transfer-ready.</p>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3 class="highlight-title">Elevation &amp; Sea Views</h3>
+        <p class="highlight-body">Hilltop position delivers 180° views over Haad Salad bay and the Gulf of Thailand — a key driver of villa premiums on Koh Phangan.</p>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3 class="highlight-title">Paved Road Access</h3>
+        <p class="highlight-body">A sealed concrete private road runs directly to the plot boundary, reducing civil-works costs and construction timelines significantly.</p>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3 class="highlight-title">7-Villa Feasibility</h3>
+        <p class="highlight-body">Third-party feasibility study and 3D mapping completed for a 7-unit luxury villa layout. Available to qualified buyers on request.</p>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3 class="highlight-title">Haad Salad Location</h3>
+        <p class="highlight-body">One of Koh Phangan's fastest-growing bays — quieter than Baan Tai yet within 10 min of Srithanu and the main tourist corridor.</p>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3 class="highlight-title">Ready to Transact</h3>
+        <p class="highlight-body">Survey, Chanote, easement, and feasibility documents are prepared. Motivated seller. Flexible on structure for the right buyer.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- FINANCIALS -->
+  <section class="section">
+    <div class="two-col">
+      <div>
+        <p class="section-label">The Numbers</p>
+        <h2 class="section-title">Indicative returns at 7 villas</h2>
+        <p class="section-lead">Based on the completed feasibility study. Detailed assumptions are in the full report available to qualified buyers.</p>
+        <div class="returns-table">
+          <div class="rt-row"><span>Line Item</span><span class="rt-val">Value</span></div>
+          <div class="rt-row"><span>Land ask price</span><span class="rt-val">THB 25–28M</span></div>
+          <div class="rt-row"><span>Estimated build cost (7 villas)</span><span class="rt-val">THB 35–42M</span></div>
+          <div class="rt-row"><span>Projected GDV (sell-off)</span><span class="rt-val">THB 98–120M</span></div>
+          <div class="rt-row"><span>Projected gross margin</span><span class="rt-val">~35–40%</span></div>
+          <div class="rt-row"><span>Rental yield model available</span><span class="rt-val">Yes</span></div>
+        </div>
+      </div>
+      <div>
+        <p class="section-label">Acquisition Process</p>
+        <h2 class="section-title">From interest to transfer</h2>
+        <div class="process-steps">
+          <div class="step">
+            <span class="step-num">01</span>
+            <div>
+              <p class="step-title">Request Documents</p>
+              <p class="step-body">Complete the short qualification form to unlock the Chanote, survey, and feasibility files instantly.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">02</span>
+            <div>
+              <p class="step-title">Due Diligence &amp; Site Visit</p>
+              <p class="step-body">Review materials with your lawyer. Site visits arranged on request — we facilitate logistics from Bangkok or Koh Samui.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">03</span>
+            <div>
+              <p class="step-title">LOI &amp; Reservation</p>
+              <p class="step-body">Non-binding LOI locks the price. Refundable reservation deposit holds the land while legals are finalised.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">04</span>
+            <div>
+              <p class="step-title">Land Department Transfer</p>
+              <p class="step-body">Title transferred at the Koh Phangan Land Office in the presence of both parties and appointed lawyers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <h2>Ready to review the full file?</h2>
+    <p>Chanote, easement agreement, survey package, and 3D feasibility report — available immediately to qualified buyers.</p>
+    <a class="btn-white" href="/request-documents">Unlock Documents Now</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>Haad Salad Land · Koh Phangan, Surat Thani, Thailand</p>
+    <p>For serious buyers and developers only. All figures indicative. Verify independently with licensed Thai legal counsel.</p>
+  </footer>
+</Layout>
+
+<style>
+  /* ── HERO ── */
+  .hero {
+    padding: 80px 24px 64px;
+    max-width: var(--max-w-site);
+    margin: 0 auto;
+  }
+  .hero-tag {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(36px, 6vw, 68px);
+    line-height: 1.08;
+    font-weight: normal;
+    letter-spacing: -1px;
+    color: var(--color-ink);
+    max-width: 720px;
+    margin-bottom: 24px;
+  }
+  .hero-lead {
+    font-size: 18px;
+    color: var(--color-muted);
+    max-width: 560px;
+    margin-bottom: 36px;
+    font-family: Georgia, serif;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    background: var(--color-accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 13px 22px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.18s ease, transform 0.15s ease;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--color-accent-hover); transform: translateY(-1px); }
+  .btn-ghost {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    background: transparent;
+    color: var(--color-accent);
+    border: 1px solid var(--color-line);
+    border-radius: 8px;
+    padding: 13px 22px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.15s ease;
+    display: inline-block;
+  }
+  .btn-ghost:hover { background: var(--color-accent); color: #fff; border-color: var(--color-accent); transform: translateY(-1px); }
+
+  /* ── TRUST STRIP ── */
+  .trust-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    align-items: center;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-line);
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+  .trust-item svg {
+    width: 14px; height: 14px;
+    stroke: var(--color-ok);
+    fill: none;
+    flex-shrink: 0;
+  }
+
+  /* ── METRICS ── */
+  .metrics { background: var(--color-ink); color: #fff; }
+  .metrics-inner {
+    max-width: var(--max-w-site);
+    margin: 0 auto;
+    padding: 36px 24px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .metric { padding: 0 24px; border-right: 1px solid rgba(255,255,255,0.12); }
+  .metric:first-child { padding-left: 0; }
+  .metric:last-child { border-right: none; padding-right: 0; }
+  .metric-value {
+    font-family: var(--font-serif);
+    font-size: 30px;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+  }
+  .metric-label {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* ── SECTION SHELL ── */
+  .section {
+    max-width: var(--max-w-site);
+    margin: 0 auto;
+    padding: 72px 24px;
+  }
+  .section-label {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 14px;
+  }
+  .section-title {
+    font-size: clamp(26px, 4vw, 40px);
+    line-height: 1.12;
+    font-weight: normal;
+    letter-spacing: -0.5px;
+    max-width: 600px;
+    margin-bottom: 16px;
+  }
+  .section-lead {
+    font-size: 17px;
+    color: var(--color-muted);
+    max-width: 560px;
+    margin-bottom: 40px;
+    font-family: Georgia, serif;
+  }
+  .divider { border: none; border-top: 1px solid var(--color-line); }
+
+  /* ── GALLERY SECTION ── */
+  .gallery-section {
+    background: #1a1612;
+    padding: 80px 0;
+  }
+  .gallery-header {
+    max-width: var(--max-w-site);
+    margin: 0 auto;
+    padding: 0 24px 48px;
+  }
+  .gallery-header .section-label { color: var(--color-accent-light); }
+  .gallery-header .section-title { color: #f7f4ef; max-width: 500px; }
+  .gallery-header .section-lead { color: rgba(247,244,239,0.55); }
+  .gallery-group { margin-bottom: 52px; }
+  .gallery-group:last-child { margin-bottom: 0; }
+  .gallery-group-label {
+    max-width: var(--max-w-site);
+    margin: 0 auto 16px;
+    padding: 0 24px 14px;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: rgba(247,244,239,0.38);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  /* ── AERIAL SECTION ── */
+  .aerial-section { background: var(--color-bg); padding: 80px 0; }
+  .aerial-header {
+    max-width: var(--max-w-site);
+    margin: 0 auto;
+    padding: 0 24px 48px;
+  }
+  .aerial-grid {
+    max-width: var(--max-w-site);
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 8px;
+  }
+  .aerial-main {
+    grid-column: 1 / -1;
+    position: relative;
+    height: clamp(340px, 48vw, 600px);
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  .aerial-main img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block; transition: transform 0.7s ease; }
+  .aerial-main:hover img { transform: scale(1.03); }
+  .aerial-thumb { position: relative; height: clamp(200px, 26vw, 340px); overflow: hidden; border-radius: 4px; }
+  .aerial-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
+  .aerial-thumb:hover img { transform: scale(1.04); }
+  .aerial-badge {
+    position: absolute;
+    bottom: 16px; left: 16px;
+    background: rgba(20,15,10,0.72);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 5px;
+    padding: 7px 12px;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(247,244,239,0.85);
+  }
+
+  /* ── HIGHLIGHTS ── */
+  .highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--color-line);
+    border: 1px solid var(--color-line);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .highlight-item {
+    background: var(--color-card);
+    padding: 28px 24px;
+    transition: background 0.2s ease;
+  }
+  .highlight-item:hover { background: #faf7f3; }
+  .highlight-icon {
+    width: 22px; height: 22px;
+    color: var(--color-accent);
+    margin-bottom: 14px;
+  }
+  .highlight-icon svg { width: 22px; height: 22px; }
+  .highlight-title {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 8px;
+    color: var(--color-ink);
+  }
+  .highlight-body {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--color-muted);
+    line-height: 1.55;
+  }
+
+  /* ── FINANCIALS ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .returns-table {
+    border: 1px solid var(--color-line);
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: var(--font-sans);
+    font-size: 13px;
+  }
+  .rt-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding: 13px 18px;
+    border-bottom: 1px solid var(--color-line);
+    gap: 12px;
+    transition: background 0.15s ease;
+  }
+  .rt-row:last-child { border-bottom: none; }
+  .rt-row:first-child { background: var(--color-ink); color: #fff; font-weight: 700; letter-spacing: 0.5px; font-size: 11px; text-transform: uppercase; }
+  .rt-row:not(:first-child):hover { background: #faf7f3; }
+  .rt-val { font-weight: 700; color: var(--color-accent); white-space: nowrap; }
+  .rt-row:first-child .rt-val { color: rgba(255,255,255,0.5); }
+
+  /* ── PROCESS ── */
+  .process-steps { display: grid; gap: 0; }
+  .step {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 16px;
+    padding: 20px 8px;
+    border-bottom: 1px solid var(--color-line);
+    border-radius: 6px;
+    margin: 0 -8px;
+    transition: background 0.15s ease;
+  }
+  .step:last-child { border-bottom: none; }
+  .step:hover { background: #faf7f3; }
+  .step-num { font-family: var(--font-sans); font-size: 11px; font-weight: 700; letter-spacing: 0.5px; color: var(--color-accent); padding-top: 3px; }
+  .step-title { font-family: var(--font-serif); font-size: 16px; margin-bottom: 4px; }
+  .step-body { font-family: var(--font-sans); font-size: 13px; color: var(--color-muted); }
+
+  /* ── CTA BAND ── */
+  .cta-band {
+    background: var(--color-accent);
+    padding: 64px 24px;
+    text-align: center;
+  }
+  .cta-band h2 { font-size: clamp(26px, 4vw, 42px); color: #fff; font-weight: normal; margin-bottom: 14px; }
+  .cta-band p { font-family: var(--font-sans); font-size: 15px; color: rgba(255,255,255,0.72); margin-bottom: 30px; max-width: 440px; margin-left: auto; margin-right: auto; }
+  .btn-white {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    background: #fff;
+    color: var(--color-accent);
+    border: none;
+    border-radius: 8px;
+    padding: 14px 26px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.18s ease, transform 0.15s ease;
+    display: inline-block;
+  }
+  .btn-white:hover { background: #f0ece4; transform: translateY(-1px); }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    background: var(--color-ink);
+    color: rgba(255,255,255,0.4);
+    padding: 32px 24px;
+    text-align: center;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    line-height: 1.7;
+  }
+  .site-footer p + p { margin-top: 6px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 800px) {
+    .hero { padding: 52px 20px 44px; }
+    .metrics-inner { grid-template-columns: repeat(2, 1fr); gap: 24px 0; }
+    .metric { border-right: none; padding: 0; }
+    .metric:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.12); padding-right: 24px; }
+    .highlights { grid-template-columns: 1fr; }
+    .two-col { grid-template-columns: 1fr; gap: 36px; }
+    .aerial-grid { grid-template-columns: 1fr; padding: 0 20px; }
+    .aerial-main { grid-column: 1; }
+    .aerial-thumb { height: clamp(200px, 55vw, 300px); }
+    .section { padding: 52px 20px; }
+  }
+  @media (max-width: 540px) {
+    .gallery-section { padding: 56px 0; }
+    .gallery-header { padding: 0 20px 36px; }
+    .aerial-section { padding: 56px 0; }
+    .aerial-header { padding: 0 20px 36px; }
+  }
+</style>

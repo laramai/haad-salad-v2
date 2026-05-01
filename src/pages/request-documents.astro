@@ -1,0 +1,283 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const LEAD_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbx8CXbpgPWY6XRdOpSUp6y0im0-gjPu9nPyuzEgQrf7PUyo-v7q2rEhNPdgW9eW_aQh/exec';
+---
+
+<Layout
+  title="Request Documents — Haad Salad Land"
+  description="Request the Chanote, survey, and feasibility files for the Haad Salad land plot on Koh Phangan."
+>
+  <main class="wrap">
+    <section class="card">
+      <a class="back-link" href="/" aria-label="Back to investor deck">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Investor Deck
+      </a>
+      <h1>Request Chanote, Survey &amp; Feasibility Files</h1>
+      <p class="sub">Short qualification form for serious land buyers and developers in Thailand.</p>
+
+      <form id="leadForm" novalidate>
+        <div class="grid">
+          <div class="field">
+            <label for="fullName">Full name</label>
+            <input id="fullName" name="fullName" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="buyerType">Buyer type</label>
+            <select id="buyerType" name="buyerType" required>
+              <option value="">Select...</option>
+              <option>Individual buyer</option>
+              <option>Developer / operator</option>
+              <option>Investment group / fund</option>
+              <option>Broker / representative</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="timeline">Purchase timeline</label>
+            <select id="timeline" name="timeline" required>
+              <option value="">Select...</option>
+              <option>0–3 months</option>
+              <option>3–6 months</option>
+              <option>6–12 months</option>
+              <option>Exploring only</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="budget">Budget range (THB)</label>
+            <select id="budget" name="budget" required>
+              <option value="">Select...</option>
+              <option>Under 20M</option>
+              <option>20M–30M</option>
+              <option>30M–50M</option>
+              <option>50M+</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="purpose">Primary purpose</label>
+            <select id="purpose" name="purpose" required>
+              <option value="">Select...</option>
+              <option>Build villas for sale</option>
+              <option>Build villas for rental yield</option>
+              <option>Land banking / long-term hold</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <!-- honeypot -->
+          <div class="field hp" aria-hidden="true">
+            <label for="website">Website</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+        </div>
+
+        <label class="consent">
+          <input id="consent" type="checkbox" required />
+          <span>I confirm this request is for legitimate acquisition review and agree to be contacted by email regarding these documents.</span>
+        </label>
+
+        <div class="actions">
+          <button type="submit">Unlock Documents</button>
+          <span class="hint">No unnecessary questions. Only essentials.</span>
+        </div>
+        <p id="error" class="error" role="alert"></p>
+      </form>
+
+      <section id="downloads" class="downloads" aria-live="polite">
+        <p class="ok">Qualified. Your download links are ready.</p>
+        <div class="files">
+          <div class="file">
+            <strong>Chanote &amp; Easement Agreement (2 Rai Plot)</strong>
+            <a href="/haad_salad_prospect_assets/Chanotes_and_Easement_Agreement_Haad_Salad_2rai_plot.pdf" download>Download PDF</a>
+          </div>
+          <div class="file">
+            <strong>Haad Salad Survey Package</strong>
+            <a href="/haad_salad_prospect_assets/Haad_Salad_Survey.zip" download>Download ZIP</a>
+          </div>
+          <div class="file">
+            <strong>Land Feasibility for 7 Villas</strong>
+            <a href="/haad_salad_prospect_assets/Feasibility_for_7_villas.pdf" download>Download PDF</a>
+          </div>
+          <div class="file">
+            <strong>Feasibility Report &amp; 3D Mapping</strong>
+            <a href="https://drive.google.com/drive/folders/1_wY39pd9ngSLA_zqGx9Pq0jZRF8GxRNI?usp=drive_link" target="_blank" rel="noopener noreferrer">Open in Drive</a>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+</Layout>
+
+<script define:vars={{ LEAD_WEBHOOK_URL }}>
+  const form = document.getElementById('leadForm');
+  const downloads = document.getElementById('downloads');
+  const errorEl = document.getElementById('error');
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  function setSubmitting(on) {
+    submitBtn.disabled = on;
+    submitBtn.textContent = on ? 'Submitting…' : 'Unlock Documents';
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errorEl.style.display = 'none';
+    errorEl.textContent = '';
+
+    if (document.getElementById('website').value.trim()) {
+      errorEl.textContent = 'Submission blocked.';
+      errorEl.style.display = 'block';
+      return;
+    }
+    if (!form.checkValidity()) {
+      errorEl.textContent = 'Please complete all required fields.';
+      errorEl.style.display = 'block';
+      form.reportValidity();
+      return;
+    }
+
+    const payload = {
+      timestamp: new Date().toISOString(),
+      fullName: form.fullName.value.trim(),
+      email: form.email.value.trim(),
+      buyerType: form.buyerType.value,
+      timeline: form.timeline.value,
+      budget: form.budget.value,
+      purpose: form.purpose.value,
+      consent: document.getElementById('consent').checked ? 'yes' : 'no',
+      sourcePage: window.location.pathname,
+    };
+
+    try {
+      setSubmitting(true);
+      await fetch(LEAD_WEBHOOK_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload),
+      });
+      downloads.classList.add('show');
+      downloads.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } catch {
+      errorEl.textContent = 'Could not submit right now. Please try again in a moment.';
+      errorEl.style.display = 'block';
+    } finally {
+      setSubmitting(false);
+    }
+  });
+</script>
+
+<style>
+  .wrap { max-width: 860px; margin: 36px auto; padding: 0 20px 36px; }
+  .card {
+    background: var(--color-card);
+    border: 1px solid var(--color-line);
+    border-radius: 10px;
+    padding: 26px;
+  }
+  h1 {
+    font-family: var(--font-serif);
+    margin: 0 0 8px;
+    font-size: clamp(24px, 4vw, 34px);
+    line-height: 1.15;
+    font-weight: normal;
+    color: var(--color-ink);
+  }
+  .sub { margin: 0 0 22px; color: var(--color-muted); font-size: 16px; font-family: Georgia, serif; }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: var(--color-accent);
+    border: 1px solid var(--color-line);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    background: #fff;
+    font-family: var(--font-sans);
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .back-link:hover { background: var(--color-bg); border-color: var(--color-accent); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field.full { grid-column: 1 / -1; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  label { font-size: 13px; font-weight: 700; letter-spacing: 0.2px; font-family: var(--font-sans); }
+  input, select {
+    width: 100%;
+    border: 1px solid var(--color-line);
+    border-radius: 8px;
+    padding: 11px 12px;
+    font-size: 15px;
+    color: var(--color-ink);
+    background: #fff;
+    font-family: var(--font-sans);
+    transition: border-color 0.15s ease;
+  }
+  input:focus, select:focus {
+    outline: 2px solid rgba(143,116,79,0.25);
+    border-color: var(--color-accent);
+  }
+  .consent { margin-top: 14px; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: var(--color-muted); font-family: var(--font-sans); }
+  .consent input { width: auto; margin-top: 2px; }
+  .actions { margin-top: 16px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  button {
+    border: 1px solid var(--color-accent);
+    background: var(--color-accent);
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    padding: 11px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    transition: background 0.18s ease, transform 0.15s ease;
+  }
+  button:hover { background: var(--color-accent-hover); transform: translateY(-1px); }
+  button:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+  .hint { font-size: 13px; color: var(--color-muted); font-family: var(--font-sans); }
+  .error { margin-top: 10px; color: #a32626; font-size: 14px; display: none; font-family: var(--font-sans); }
+  .downloads { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--color-line); display: none; }
+  .downloads.show { display: block; }
+  .ok { color: var(--color-ok); font-size: 14px; margin: 0 0 14px; font-weight: 700; font-family: var(--font-sans); }
+  .files { display: grid; gap: 10px; }
+  .file {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--color-line);
+    border-radius: 8px;
+    padding: 11px 12px;
+    background: #fcfbf9;
+    font-family: var(--font-sans);
+  }
+  .file strong { font-size: 14px; }
+  .file a {
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    text-decoration: none;
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .file a:hover { background: var(--color-accent); color: #fff; }
+
+  @media (max-width: 740px) {
+    .grid { grid-template-columns: 1fr; }
+    h1 { font-size: 26px; }
+    .card { padding: 18px; }
+    .file { flex-direction: column; align-items: flex-start; }
+  }
+</style>
