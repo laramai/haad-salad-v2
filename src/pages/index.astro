@@ -1474,43 +1474,114 @@ const navLinks = [
   /* ══════════════════════════════════════════════════════════
      RESPONSIVE
   ══════════════════════════════════════════════════════════ */
+  /* ══════════════════════════════════════════════════════════
+     RESPONSIVE — TABLET (≤900px)
+  ══════════════════════════════════════════════════════════ */
   @media (max-width: 900px) {
+    /* All two-column grids → single column */
     .opp-inner,
-    .location-grid,
     .access-grid,
     .seaview-grid,
     .terrain-intro,
     .topo-intro {
       grid-template-columns: 1fr;
-      gap: 36px;
+      gap: 32px;
     }
+    /* 4-column specs → 2x2 */
     .opp-specs { grid-template-columns: repeat(2, 1fr); }
     .opp-spec:nth-child(2) { border-right: none; }
+    /* Hero stats → 2x2 */
     .hero-stats { grid-template-columns: repeat(2, 1fr); }
     .hero-stat:nth-child(2) { border-right: none; }
+    /* Terrain drawings → single column */
     .terrain-strip { grid-template-columns: 1fr; }
+    /* Why grid → single column */
     .why-grid { grid-template-columns: 1fr; gap: 32px; }
-    .pricing-grid--single { grid-template-columns: 1fr; max-width: 560px; }
-  .pricing-grid { grid-template-columns: 1fr; }
+    /* Pricing */
+    .pricing-grid, .pricing-grid--single { grid-template-columns: 1fr; max-width: 100%; }
+    /* Callout card → stacked */
     .callout-card { grid-template-columns: 1fr; }
     .callout-card-photo { min-height: 260px; }
+    /* Topo cards → single column */
     .topo-grid { grid-template-columns: 1fr; }
+    /* Location text full width */
+    .location-text { max-width: 100%; }
   }
+
+  /* ══════════════════════════════════════════════════════════
+     RESPONSIVE — MOBILE (≤600px)
+  ══════════════════════════════════════════════════════════ */
   @media (max-width: 600px) {
-    .section { padding: 56px 20px; }
+    /* Section padding */
+    .section { padding: 48px 20px; }
+    .dark-section { padding: 48px 0; }
+    .section-inner { padding: 0 20px; }
     .opp-inner,
     .opp-specs,
     .terrain-intro { padding: 0 20px; }
-    .section-inner { padding: 0 20px; }
-    .gallery-header { padding: 0 20px 36px; }
+    .gallery-header { padding: 0 20px 28px; }
     .hero-inner { padding: 60px 20px 32px; }
-    .opp-specs { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+    .cta-section { padding: 48px 20px; }
+
+    /* Hero stats → 2x2 with correct borders */
+    .hero-stats {
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .hero-stat { padding: 18px 16px; }
+    .hero-stat:nth-child(2) { border-right: none; }
+    .hero-stat:nth-child(3) { border-bottom: none; }
+    .hero-stat:nth-child(4) { border-right: none; border-bottom: none; }
+    .hero-stat-val { font-size: 22px; }
+
+    /* Hero text */
+    .hero-h1 { font-size: clamp(36px, 10vw, 56px); }
+    .hero-lead { font-size: 15px; }
+    .hero-actions { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .btn-primary, .btn-ghost-hero { width: 100%; text-align: center; }
+
+    /* Opportunity specs */
+    .opp-specs {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0 20px;
+    }
+    .opp-spec { padding: 16px 12px; }
+
+    /* Location */
+    .location-text { max-width: 100%; }
     .travel-grid { grid-template-columns: 1fr 1fr; }
-    .cta-section { padding: 56px 20px; }
-    .cta-actions { flex-direction: column; align-items: center; }
+    .travel-item { padding: 14px 12px; }
+    .travel-val { font-size: 20px; }
+    .sunset-fullbleed { height: clamp(280px, 70vw, 420px); border-radius: 0; }
+
+    /* Gallery strips — narrower cards on small screens */
+    .gallery-strip { padding: 0 20px 8px; gap: 10px; }
+    .gallery-strip-item { flex: 0 0 260px; height: 195px; }
+
+    /* Terrain */
+    .terrain-strip { gap: 12px; }
+    .terrain-img-wrap img { height: clamp(180px, 50vw, 280px); }
+
+    /* Topography */
+    .topo-card { padding: 24px 20px; }
+    .topo-intro { gap: 24px; }
+
+    /* Pricing */
+    .pricing-card { padding: 28px 20px; }
+    .legal-strip { padding: 0 20px; }
+
+    /* Why */
+    .why-item { gap: 10px; }
+
+    /* CTA / Contact */
+    .cta-actions { flex-direction: column; align-items: stretch; }
+    .cta-actions .btn-primary,
+    .cta-actions .btn-ghost { width: 100%; text-align: center; }
     .contact-details { flex-direction: column; }
-    .contact-item { border-right: none; border-bottom: 1px solid var(--color-line); }
+    .contact-item { border-right: none; border-bottom: 1px solid var(--color-line); padding: 16px 20px; }
     .contact-item:last-child { border-bottom: none; }
-    .location-photo { margin-top: 0; }
+
+    /* Footer */
+    .site-footer { padding: 24px 20px; font-size: 11px; }
   }
 </style>
