@@ -13,7 +13,9 @@ const {
 ---
 
 <nav class="nav">
-  <a class="nav-logo" href="/">Haad Salad Land</a>
+  <a class="nav-logo" href="/">
+    <img src="/saladsunset/assets/siamland-logo.png" alt="Siamland" class="nav-logo-img" />
+  </a>
   <div class="nav-links">
     {navLinks.map(({ label, href }) => (
       <a class="nav-link" href={href}>{label}</a>
@@ -37,15 +39,15 @@ const {
     gap: 24px;
   }
   .nav-logo {
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    color: var(--color-accent);
-    font-family: var(--font-sans);
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    white-space: nowrap;
     flex-shrink: 0;
+  }
+  .nav-logo-img {
+    height: 32px;
+    width: auto;
+    display: block;
   }
   .nav-links {
     display: flex;
