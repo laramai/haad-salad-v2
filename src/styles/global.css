@@ -15,6 +15,9 @@
   --color-accent-hover: #b5864e;
   --color-accent-light: #d4a870;
 
+  /* Status */
+  --color-ok:           #2e7d32;
+
   /* Typography */
   --font-serif:         'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-sans:          ui-sans-serif, system-ui, sans-serif;
