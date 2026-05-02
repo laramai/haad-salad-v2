@@ -582,6 +582,8 @@ const navLinks = [
     max-width: var(--max-w-site);
     margin: 0 auto;
     padding: 80px 32px;
+    width: 100%;
+    box-sizing: border-box;
   }
   .section-label {
     font-size: 11px;
@@ -1185,6 +1187,8 @@ const navLinks = [
   .gallery-section {
     background: #1a1612;
     padding: 80px 0;
+    overflow: hidden;
+    width: 100%;
   }
   .gallery-header {
     max-width: var(--max-w-site);
@@ -1528,7 +1532,7 @@ const navLinks = [
       grid-template-columns: repeat(2, 1fr);
       border-top: 1px solid rgba(255,255,255,0.08);
     }
-    .hero-stat { padding: 18px 16px; }
+    .hero-stat { padding: 18px 12px; min-width: 0; }
     .hero-stat:nth-child(2) { border-right: none; }
     .hero-stat:nth-child(3) { border-bottom: none; }
     .hero-stat:nth-child(4) { border-right: none; border-bottom: none; }
@@ -1546,6 +1550,8 @@ const navLinks = [
       padding: 0 20px;
     }
     .opp-spec { padding: 16px 12px; }
+    .opp-spec:first-child { padding-left: 12px; }
+    .opp-spec:last-child { padding-right: 12px; }
 
     /* Location */
     .location-text { max-width: 100%; }
