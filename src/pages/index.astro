@@ -762,6 +762,8 @@ const navLinks = [
     transition: transform 0.7s ease;
   }
   .callout-card-photo:hover img { transform: scale(1.04); }
+  .callout-card-text .callout-eyebrow { color: #f5f1ed; }
+  .callout-card-text .body-copy { color: rgba(245,241,237,0.65); max-width: 100%; }
 
   /* ══════════════════════════════════════════════════════════
      SUNSET FULL-BLEED
@@ -928,7 +930,7 @@ const navLinks = [
     margin-bottom: 24px;
   }
   .travel-item {
-    background: var(--color-card);
+    background: #faf7f3;
     padding: 20px 18px;
     display: flex;
     flex-direction: column;
@@ -1121,14 +1123,16 @@ const navLinks = [
     font-family: var(--font-serif);
     font-size: 18px;
     font-weight: 400;
-    color: var(--color-ink);
+    color: #f5f1ed;
     margin-bottom: 12px;
   }
   .topo-card-body {
     font-size: 15px;
-    color: var(--color-muted);
+    color: rgba(245,241,237,0.65);
     line-height: 1.7;
   }
+  .topo-card:hover .topo-card-title { color: var(--color-ink); }
+  .topo-card:hover .topo-card-body { color: var(--color-muted); }
   .topo-flat-img {
     width: 100%;
     border-radius: 10px;
