@@ -1,13 +1,9 @@
 ---
 interface Props {
-  ctaHref?: string;
-  ctaLabel?: string;
   navLinks?: Array<{ label: string; href: string }>;
 }
 
 const {
-  ctaHref = '/saladsunset/request-documents',
-  ctaLabel = 'Request Documents',
   navLinks = [],
 } = Astro.props;
 ---
@@ -21,7 +17,6 @@ const {
       <a class="nav-link" href={href}>{label}</a>
     ))}
   </div>
-  <a class="nav-cta" href={ctaHref}>{ctaLabel}</a>
 </nav>
 
 <style>
@@ -68,32 +63,8 @@ const {
     white-space: nowrap;
   }
   .nav-link:hover { color: var(--color-accent); }
-  .nav-cta {
-    font-family: var(--font-sans);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.4px;
-    background: var(--color-accent);
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    padding: 8px 16px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.18s ease, transform 0.15s ease;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-  .nav-cta:hover {
-    background: var(--color-accent-hover);
-    transform: translateY(-1px);
-  }
-
   @media (max-width: 860px) {
     .nav-links { display: none; }
     .nav { padding: 0 20px; }
-  }
-  @media (max-width: 480px) {
-    .nav-cta { font-size: 11px; padding: 7px 12px; }
   }
 </style>
