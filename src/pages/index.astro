@@ -229,7 +229,10 @@ const navLinks = [
     <div class="section-inner">
       <p class="section-label-light">Terrain Study - Masterplan &amp; Technical Drawings</p>
       <div class="terrain-intro">
-        <h2 class="section-title-light">Terrain &amp; Drone 3D Mapping</h2>
+        <div class="terrain-intro-text-col">
+          <h2 class="section-title-light">Terrain &amp; Drone 3D Mapping</h2>
+          <a class="btn-primary terrain-intro-download" href="/saladsunset/request-documents">Download feasibility and terrain report</a>
+        </div>
         <div class="terrain-intro-body">
           <p class="body-copy-light">The site underwent comprehensive terrain analysis including drone-based terrain modelling and orthophoto mapping, producing a precise 3D model verified against real on-site photography. The drawings below represent the outputs of that study - masterplan positioning, elevation sections, and slope profile analysis across three cross-sections of the full plot.</p>
           <ul class="check-list-light">
@@ -1112,6 +1115,15 @@ const navLinks = [
     gap: 64px;
     align-items: start;
     margin-bottom: 48px;
+  }
+  .terrain-intro-text-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .terrain-intro-text-col .section-title-light {
+    margin-bottom: 0;
   }
   .terrain-intro-body .body-copy-light { max-width: 100%; }
   .terrain-strip-caption {
