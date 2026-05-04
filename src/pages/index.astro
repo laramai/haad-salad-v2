@@ -852,10 +852,10 @@ const navLinks = [
     max-width: var(--max-w-site);
     margin: 0 auto;
     padding: 0 32px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: stretch;
     margin-bottom: 56px;
   }
   .opp-text .section-label { color: var(--color-accent-light); }
@@ -872,8 +872,9 @@ const navLinks = [
   }
   .opp-photo {
     position: relative;
-    height: clamp(320px, 40vw, 520px);
-    border-radius: 8px;
+    width: 100%;
+    height: clamp(280px, 48vw, 520px);
+    border-radius: 10px;
     overflow: hidden;
   }
   .opp-photo img {
@@ -1541,7 +1542,6 @@ const navLinks = [
   ══════════════════════════════════════════════════════════ */
   @media (max-width: 900px) {
     /* All two-column grids → single column */
-    .opp-inner,
     .terrain-intro,
     .topo-intro {
       grid-template-columns: 1fr;
