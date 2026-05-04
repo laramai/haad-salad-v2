@@ -95,7 +95,7 @@ const navLinks = [
     <div class="video-embed-wrap">
       <iframe
         class="video-embed-iframe"
-        src="https://www.youtube-nocookie.com/embed/YzwWR9uIthE?autoplay=1&mute=1&loop=1&playlist=YzwWR9uIthE&controls=0&modestbranding=1&playsinline=1&rel=0&disablekb=1&fs=0&iv_load_policy=3&showinfo=0&cc_load_policy=0"
+        src="https://www.youtube-nocookie.com/embed/YzwWR9uIthE?autoplay=1&mute=1&loop=1&playlist=YzwWR9uIthE&controls=1&modestbranding=1&playsinline=1&rel=0&disablekb=1&fs=0&iv_load_policy=3&showinfo=0&cc_load_policy=0"
         title="Aerial view, Haad Salad Koh Phangan"
         loading="eager"
         allow="autoplay; encrypted-media"
@@ -268,7 +268,7 @@ const navLinks = [
     <div class="video-embed-wrap">
       <iframe
         class="video-embed-iframe"
-        src="https://www.youtube-nocookie.com/embed/uzEEIMKxbXM?autoplay=1&mute=1&loop=1&playlist=uzEEIMKxbXM&controls=0&modestbranding=1&playsinline=1&rel=0&disablekb=1&fs=0&iv_load_policy=3&showinfo=0&cc_load_policy=0"
+        src="https://www.youtube-nocookie.com/embed/uzEEIMKxbXM?autoplay=1&mute=1&loop=1&playlist=uzEEIMKxbXM&controls=1&modestbranding=1&playsinline=1&rel=0&disablekb=1&fs=0&iv_load_policy=3&showinfo=0&cc_load_policy=0"
         title="Terrain and hillside, Haad Salad Koh Phangan"
         loading="lazy"
         allow="autoplay; encrypted-media"
@@ -421,7 +421,7 @@ const navLinks = [
     <div class="video-embed-wrap">
       <iframe
         class="video-embed-iframe"
-        src="https://www.youtube-nocookie.com/embed/IsE5g3SgJSE?autoplay=1&mute=1&loop=1&playlist=IsE5g3SgJSE&controls=0&modestbranding=1&playsinline=1&rel=0&disablekb=1&fs=0&iv_load_policy=3&showinfo=0&cc_load_policy=0"
+        src="https://www.youtube-nocookie.com/embed/IsE5g3SgJSE?autoplay=1&mute=1&loop=1&playlist=IsE5g3SgJSE&controls=1&modestbranding=1&playsinline=1&rel=0&disablekb=1&fs=0&iv_load_policy=3&showinfo=0&cc_load_policy=0"
         title="Haad Salad land, Koh Phangan"
         loading="lazy"
         allow="autoplay; encrypted-media"
@@ -917,7 +917,7 @@ const navLinks = [
   }
 
   /* ══════════════════════════════════════════════════════════
-     FULL-WIDTH YOUTUBE (cinematic, no UI clicks)
+     FULL-WIDTH YOUTUBE (autoplay muted; mobile can tap / use controls)
   ══════════════════════════════════════════════════════════ */
   .video-embed-section {
     width: 100%;
@@ -936,7 +936,15 @@ const navLinks = [
     width: 100%;
     height: 100%;
     border: 0;
-    pointer-events: none;
+  }
+  /* Desktop: transparent layer blocks taps; mobile taps hit the iframe (controls=1 in URL). */
+  @media (min-width: 901px) {
+    .video-embed-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
   }
 
   /* ══════════════════════════════════════════════════════════
