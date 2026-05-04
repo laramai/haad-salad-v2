@@ -1052,20 +1052,21 @@ const navLinks = [
      SEA VIEW
   ══════════════════════════════════════════════════════════ */
   .seaview-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: stretch;
     margin-bottom: 56px;
   }
   .seaview-photo {
     position: relative;
+    width: 100%;
   }
   .seaview-photo img {
     width: 100%;
-    height: clamp(320px, 40vw, 520px);
+    height: clamp(280px, 48vw, 520px);
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 10px;
     display: block;
     transition: transform 0.7s ease;
   }
@@ -1540,7 +1541,6 @@ const navLinks = [
   @media (max-width: 900px) {
     /* All two-column grids → single column */
     .opp-inner,
-    .seaview-grid,
     .terrain-intro,
     .topo-intro {
       grid-template-columns: 1fr;
